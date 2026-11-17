@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auralytix — Page Detail | shourya-bajaj-akurdi-pune.com</title>
+  
+  <!-- Inter & JetBrains Mono Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Custom Design System Styles -->
+  <link rel="stylesheet" href="styles.css?v=7">
+</head>
+<body class="relative">
+
+  <!-- Ambient Light Accents -->
+  <div class="ambient-glow"></div>
+  <div class="ambient-glow-secondary"></div>
+
+  <div class="flex min-h-screen">
+    
+    <!-- =========================================================================
+         LEFT SIDEBAR NAVIGATION
+         ========================================================================= -->
+    <aside class="w-64 flex-shrink-0 flex flex-col justify-between p-5 border-r border-[var(--border-subtle)] bg-[var(--bg-sidebar)] z-20">
+      
+      <div class="space-y-6">
+        <!-- Brand Logo -->
+        <a href="index.html" class="flex items-center gap-3 px-2 group">
+          <div class="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center font-bold text-white shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform">
+            A
+          </div>
+          <div>
+            <span class="font-bold text-base tracking-tight text-[var(--text-primary)] block">Auralytix</span>
+            <span class="text-[10px] uppercase font-mono tracking-widest text-[var(--text-muted)] block -mt-1">Search Intelligence</span>
+          </div>
+        </a>
+
+        <!-- Navigation Links -->
+        <nav class="space-y-6">
+          
+          <!-- Section 1: Audits -->
+          <div class="space-y-1">
+            <span class="block px-3 text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)]">
+              Audits
+            </span>
+            <a href="index.html" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all">
+              <i data-lucide="layers" class="w-4 h-4"></i>
+              <span>All audits</span>
+            </a>
+          </div>
+
+          <!-- Section 2: This Audit -->
+          <div class="space-y-1">
+            <span class="block px-3 text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)]">
+              This Audit
+            </span>
+            <a href="report.html?site=shourya-bajaj-akurdi-pune.com&id=bajaj-akurdi" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all">
+              <i data-lucide="file-bar-chart" class="w-4 h-4"></i>
+              <span>Report</span>
+            </a>
+            <a href="pages.html?site=shourya-bajaj-akurdi-pune.com&id=bajaj-akurdi" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-semibold bg-blue-600 text-white shadow-sm shadow-blue-600/30 transition-all">
+              <i data-lucide="file-text" class="w-4 h-4"></i>
+              <span>Page detail</span>
+            </a>
+            <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all">
+              <i data-lucide="download" class="w-4 h-4"></i>
+              <span>Download PDF</span>
+            </a>
+          </div>
+
+          <!-- Section 3: Account -->
+          <div class="space-y-1 pt-3 border-t border-[var(--border-subtle)]">
+            <span class="block px-3 text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)]">
+              Account
+            </span>
+            <div class="p-3 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-subtle)] space-y-2">
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-[var(--text-secondary)] flex items-center gap-1.5 font-medium">
+                  <i data-lucide="coins" class="w-3.5 h-3.5 text-amber-500"></i>
+                  Credits
+                </span>
+                <span class="font-mono font-bold text-[var(--text-primary)]">659</span>
+              </div>
+              <div class="w-full bg-[var(--border-subtle)] h-1.5 rounded-full overflow-hidden">
+                <div class="bg-amber-500 h-full rounded-full" style="width: 88.8%"></div>
+              </div>
+              <div class="flex items-center justify-between text-[10px] text-[var(--text-muted)]">
+                <span>88.8% available</span>
+                <a href="#" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline">+ Top up</a>
+              </div>
+            </div>
+
+            <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all">
+              <i data-lucide="log-out" class="w-4 h-4"></i>
+              <span>Sign out</span>
+            </a>
+          </div>
+
+        </nav>
+
+      </div>
+
+      <!-- Footer Info Box -->
+      <div class="space-y-4">
+        <div class="p-3.5 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-subtle)] space-y-1.5 text-left">
+          <div class="flex items-center gap-1.5 text-xs font-bold text-[var(--text-primary)]">
+            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-blue-600"></i>
+            <span>How to read this</span>
+          </div>
+          <p class="text-[11px] leading-relaxed text-[var(--text-muted)]">
+            AIO comes from the site's own HTML and is deterministic. GEO is measured by grounded Gemini probes.
+          </p>
+        </div>
+
+        <!-- User Workspace Card -->
+        <div class="flex items-center gap-3 pt-3 border-t border-[var(--border-subtle)]">
+          <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center font-bold text-xs text-white">
+            KP
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="text-xs font-semibold text-[var(--text-primary)] truncate">Komalpreet</div>
+            <div class="text-[10px] text-[var(--text-muted)] truncate">Enterprise Plan</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- =========================================================================
+         MAIN CONTENT AREA
+         ========================================================================= -->
+    <main class="flex-1 flex flex-col min-w-0 overflow-y-auto z-10">
+      
+      <!-- Top Navigation Header -->
+      <header class="h-16 px-8 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)] flex items-center justify-between sticky top-0 z-30 shadow-sm backdrop-blur-md bg-opacity-95">
+        <div class="flex items-center gap-3 text-sm">
+          <a href="index.html" class="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors font-medium">All audits</a>
+          <span class="text-[var(--text-muted)]">/</span>
+          <span class="text-[var(--text-primary)] font-semibold truncate max-w-xs sm:max-w-md">shourya-bajaj-akurdi-pune.com — pages</span>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <a href="report.html?site=shourya-bajaj-akurdi-pune.com&id=bajaj-akurdi" class="text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-blue-500/20 bg-blue-50/50 hover:bg-blue-50 transition-all">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            <span>Back to report</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Main Container -->
+      <div class="p-6 lg:p-8 space-y-6 max-w-7xl w-full mx-auto">
+
+        <!-- =========================================================================
+             TOP CARD: PAGES OVERVIEW & SORT/ACTION CONTROLS
+             ========================================================================= -->
+        <div class="glass-panel p-6 space-y-4">
+          <div>
+            <h1 class="text-xl sm:text-2xl font-bold text-[var(--text-primary)] tracking-tight">
+              shourya-bajaj-akurdi-pune.com — pages
+            </h1>
+            <p class="text-xs text-[var(--text-secondary)] mt-1">
+              1 crawled pages · failing checks per page, worst pages first
+            </p>
+          </div>
+
+          <!-- Sort and Action Buttons Row -->
+          <div class="flex flex-wrap items-center gap-2 pt-1">
+            <button onclick="setPageSort('issues')" id="sort-btn-issues" class="page-sort-btn px-3 py-1.5 rounded-lg text-xs font-semibold border border-blue-500/40 bg-blue-50/70 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 shadow-xs transition-all">
+              Most issues
+            </button>
+            <button onclick="setPageSort('visibility')" id="sort-btn-visibility" class="page-sort-btn px-3 py-1.5 rounded-lg text-xs font-medium border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all">
+              Least visible
+            </button>
+            <button onclick="setPageSort('url')" id="sort-btn-url" class="page-sort-btn px-3 py-1.5 rounded-lg text-xs font-medium border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all">
+              URL
+            </button>
+            <button onclick="setPageSort('words')" id="sort-btn-words" class="page-sort-btn px-3 py-1.5 rounded-lg text-xs font-medium border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all">
+              Words
+            </button>
+            <button onclick="setPageSort('schema')" id="sort-btn-schema" class="page-sort-btn px-3 py-1.5 rounded-lg text-xs font-medium border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all">
+              Missing schema
+            </button>
+            <button onclick="setPageSort('status')" id="sort-btn-status" class="page-sort-btn px-3 py-1.5 rounded-lg text-xs font-medium border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all">
+              Status
+            </button>
+            <button class="px-3 py-1.5 rounded-lg text-xs font-medium border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all flex items-center gap-1">
+              <i data-lucide="file-down" class="w-3.5 h-3.5"></i>
+              <span>PDF</span>
+            </button>
+            <a href="report.html?site=shourya-bajaj-akurdi-pune.com&id=bajaj-akurdi" class="px-3 py-1.5 rounded-lg text-xs font-semibold border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all flex items-center gap-1 ml-auto">
+              <span>&larr; Report</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- =========================================================================
+             SUB-TABS BAR: ISSUES vs ACTIONS 9
+             ========================================================================= -->
+        <div class="flex items-center gap-6 border-b border-[var(--border-subtle)]">
+          <button onclick="switchSubTab('issues')" id="tab-nav-issues" class="pb-3 text-sm font-semibold text-blue-600 border-b-2 border-blue-600 transition-all">
+            Issues
+          </button>
+          <button onclick="switchSubTab('actions')" id="tab-nav-actions" class="pb-3 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] border-b-2 border-transparent transition-all">
+            Actions 9
+          </button>
+        </div>
+
+        <!-- =========================================================================
+             TAB 1: ISSUES PANE
+             ========================================================================= -->
+        <div id="subpane-issues" class="space-y-4">
+          <div class="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-6 space-y-4 shadow-xs">
+            
+            <!-- Pages Header with Severity Legend -->
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+              <h2 class="text-lg font-bold text-[var(--text-primary)]">Pages</h2>
+              
+              <!-- Severity Badges Legend -->
+              <div class="flex flex-wrap items-center gap-2 text-[11px]">
+                <span class="px-2 py-0.5 rounded-full font-bold bg-rose-600 text-white">critical</span>
+                <span class="px-2 py-0.5 rounded font-semibold text-rose-600 bg-rose-50 dark:bg-rose-500/10">high</span>
+                <span class="px-2 py-0.5 rounded font-semibold text-amber-600 bg-amber-50 dark:bg-amber-500/10">medium</span>
+                <span class="px-2 py-0.5 rounded font-semibold text-blue-600 bg-blue-50 dark:bg-blue-500/10">low</span>
+                <span class="px-2 py-0.5 rounded font-semibold text-emerald-700 bg-emerald-50 dark:bg-emerald-500/10">meets target &check;</span>
+                <span class="px-2 py-0.5 rounded font-semibold border border-amber-600 text-amber-700 bg-amber-50/50">passes, see note &#9888;</span>
+                <span class="text-[var(--text-muted)]">grey = not scored</span>
+              </div>
+            </div>
+
+            <!-- Explanatory Subtitle with clickable Actions link -->
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+              Failing values are coloured by how severe the problem is; &quot;want&quot; is the target. Visible = share of text in the HTML before JavaScript runs (AI crawlers mostly do not run it). Main / total words = the page&apos;s own content vs. everything including menu and footer. AI citations = how often AI answers cited the page in this audit&apos;s GEO probes; red means AI cites competitors on a topic the page covers. Fixes for every issue are on the <a href="javascript:void(0)" onclick="switchSubTab('actions')" class="text-blue-600 dark:text-blue-400 font-semibold underline hover:opacity-80">Actions</a> tab.
+            </p>
+
+            <!-- Complete 12-Column Pages Table -->
+            <div class="overflow-x-auto rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)]">
+              <table class="w-full min-w-[1360px] text-left text-xs">
+                <thead>
+                  <tr class="border-b border-[var(--border-subtle)] bg-[var(--bg-secondary)]/60 text-[10px] font-bold text-[var(--text-muted)] uppercase tracking-wider whitespace-nowrap">
+                    <th class="py-3 px-4 min-w-[240px]">PAGE</th>
+                    <th class="py-3 px-4 text-center min-w-[100px]">VISIBLE</th>
+                    <th class="py-3 px-4 text-center min-w-[130px]">MAIN / TOTAL WORDS</th>
+                    <th class="py-3 px-4 text-center min-w-[70px]">H1</th>
+                    <th class="py-3 px-4 text-center min-w-[130px]">TITLE / META CHARS</th>
+                    <th class="py-3 px-4 text-center min-w-[100px]">Q&amp;A HEADINGS</th>
+                    <th class="py-3 px-4 text-center min-w-[130px]">LINKS</th>
+                    <th class="py-3 px-4 text-center min-w-[150px]">SCHEMA</th>
+                    <th class="py-3 px-4 text-center min-w-[80px]">STATUS</th>
+                    <th class="py-3 px-4 text-center min-w-[70px]">LONG &para;</th>
+                    <th class="py-3 px-4 text-center min-w-[130px]">AUTHOR</th>
+                    <th class="py-3 px-4 text-center min-w-[200px]">AI CITATIONS</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-[var(--border-subtle)] font-medium">
+                  <tr class="hover:bg-[var(--bg-secondary)]/30 transition-colors">
+                    <!-- Page URL -->
+                    <td class="py-4 px-4 font-mono text-xs">
+                      <a href="https://shourya-bajaj-akurdi-pune.com/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline break-words">
+                        https://shourya-bajaj-akurdi-pune.com/
+                      </a>
+                    </td>
+
+                    <!-- Visible -->
+                    <td class="py-4 px-4 text-center whitespace-nowrap">
+                      <span class="inline-block px-2.5 py-0.5 rounded text-xs font-bold bg-rose-600 text-white">61% &times;</span>
+                      <div class="text-[10px] text-[var(--text-muted)] mt-0.5">want &ge; 90%</div>
+                    </td>
+
+                    <!-- Main / Total Words -->
+                    <td class="py-4 px-4 text-center whitespace-nowrap font-mono">
+                      <span class="text-rose-600 dark:text-rose-400 font-semibold text-xs">227 / 500 &times;</span>
+                      <div class="text-[10px] text-[var(--text-muted)] mt-0.5">want main &ge; 250</div>
+                    </td>
+
+                    <!-- H1 -->
+                    <td class="py-4 px-4 text-center whitespace-nowrap">
+                      <span class="inline-block px-2 py-0.5 rounded text-xs font-semibold text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10">1 &check;</span>
+                    </td>
+
+                    <!-- Title / Meta Chars -->
+                    <td class="py-4 px-4 text-center whitespace-nowrap font-mono">
+                      <span class="text-amber-600 dark:text-amber-400 font-semibold text-xs">47 / 208 &times;</span>
+                      <div class="text-[10px] text-[var(--text-muted)] mt-0.5">want meta &le; 160</div>
+                    </td>
+
+                    <!-- Q&A Headings -->
+                    <td class="py-4 px-4 text-center whitespace-nowrap font-mono">
+                      <span class="text-rose-600 dark:text-rose-400 font-semibold text-xs">0 &times;</span>
+                      <div class="text-[10px] text-[var(--text-muted)] mt-0.5">want &ge; 5</div>
+                    </td>
+
+                    <!-- Links -->
+                    <td class="py-4 px-4 text-center whitespace-nowrap">
+                      <span class="text-[var(--text-primary)] font-mono text-xs">3</span>
+                      <div class="text-[10px] text-[var(--text-muted)] mt-0.5">not scored (not an article)</div>
+                    </td>
+
+                    <!-- Schema -->
+                    <td class="py-4 px-4 text-center whitespace-nowrap">
+                      <span class="text-emerald-700 dark:text-emerald-400 font-semibold text-xs">MotorcycleDealer &times;2 &check;</span>
+                    </td>
+
+                    <!-- Status -->
+                    <td class="py-4 px-4 text-center whitespace-nowrap">
+                      <span class="inline-block px-2 py-0.5 rounded text-xs font-semibold text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 font-mono">200 &check;</span>
+                    </td>
+
+                    <!-- Long Paragraph -->
+                    <td class="py-4 px-4 text-center whitespace-nowrap font-mono">
+                      <span class="text-emerald-700 dark:text-emerald-400 font-semibold text-xs">0 &check;</span>
+                    </td>
+
+                    <!-- Author -->
+                    <td class="py-4 px-4 text-center whitespace-nowrap">
+                      <span class="text-[var(--text-muted)] text-xs">no</span>
+                      <div class="text-[10px] text-[var(--text-muted)] mt-0.5">not scored (not an article)</div>
+                    </td>
+
+                    <!-- AI Citations -->
+                    <td class="py-4 px-4 text-center whitespace-nowrap">
+                      <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold border border-emerald-300 dark:border-emerald-500/40 text-emerald-700 dark:text-emerald-400 bg-emerald-50/70 dark:bg-emerald-500/10">Cited 6&times; &check;</span>
+                      <div class="text-[10px] text-[var(--text-muted)] mt-0.5">best #1 &middot; 4 questions &middot; on design, select color</div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- =========================================================================
+             TAB 2: ACTIONS 9 PANE
+             ========================================================================= -->
+        <div id="subpane-actions" class="space-y-4 hidden">
+          <div>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+              9 fixes, most severe and widest-reaching first. Fixes marked <span class="font-mono text-[var(--text-primary)] font-medium">every page</span> are usually one change in the shared template.
+            </p>
+          </div>
+
+          <div class="space-y-4">
+
+            <!-- Action 1: CRITICAL - Direct answer near the top of the page -->
+            <div class="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5 sm:p-6 space-y-3.5 shadow-xs">
+              <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-rose-600 text-white">CRITICAL</span>
+                <h3 class="text-sm sm:text-base font-bold text-[var(--text-primary)]">Direct answer near the top of the page</h3>
+                <span class="text-xs text-[var(--text-muted)]">medium effort &middot; 1 page</span>
+              </div>
+              <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+                AI answers quote self-contained passages. A page that opens with positioning copy and defers the substance gives nothing quotable, so it gets skipped in favour of a page that answers immediately.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-12 gap-2 text-xs pt-1">
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">NOW</div>
+                <div class="sm:col-span-10 text-rose-600 dark:text-rose-400 font-medium">lead paragraph is only 5 words</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">SHOULD BE</div>
+                <div class="sm:col-span-10 text-emerald-700 dark:text-emerald-400 font-medium">One H1, then a ~50-word paragraph that answers the page&apos;s question outright.</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">HOW</div>
+                <div class="sm:col-span-10 text-[var(--text-secondary)]">Put a direct, self-contained answer of roughly 50 words immediately after the H1, before any preamble.</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">EXAMPLE</div>
+                <div class="sm:col-span-10">
+                  <div class="code-box rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)]/40 overflow-hidden">
+                    <pre class="p-3 text-xs font-mono text-[var(--text-primary)] overflow-x-auto whitespace-pre-wrap leading-relaxed"><code>&lt;h1&gt;Bajaj Bikes &amp; Motorcycles Price in Akurdi, pune&lt;/h1&gt;
+&lt;p&gt;Bajaj Bikes &amp; Motorcycles Price in Akurdi, pune is a ... that helps ... to ... . It ... , and is used by ... .&lt;/p&gt;</code></pre>
+                  </div>
+                </div>
+
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">PAGES</div>
+                <div class="sm:col-span-10 text-xs text-[var(--text-secondary)]">
+                  &bull; <a href="https://shourya-bajaj-akurdi-pune.com/" target="_blank" class="text-blue-600 hover:underline">https://shourya-bajaj-akurdi-pune.com/</a> &mdash; lead paragraph is only 5 words
+                </div>
+              </div>
+            </div>
+
+            <!-- Action 2: CRITICAL - Content present without JavaScript -->
+            <div class="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5 sm:p-6 space-y-3.5 shadow-xs">
+              <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-rose-600 text-white">CRITICAL</span>
+                <h3 class="text-sm sm:text-base font-bold text-[var(--text-primary)]">Content present without JavaScript</h3>
+                <span class="text-xs text-[var(--text-muted)]">large effort &middot; 1 page</span>
+              </div>
+              <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+                Several AI crawlers do not execute JavaScript. Content that only appears after hydration may never be seen at all, regardless of how good it is.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-12 gap-2 text-xs pt-1">
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">NOW</div>
+                <div class="sm:col-span-10 text-rose-600 dark:text-rose-400 font-medium">61% of visible content is readable without JS -- missing without JS: &apos;By clicking submit, you agree to our T&amp;C and Privacy Policy*&apos;; &apos;PULSAR 125 - DISC - CARBON GRAPHICS&apos;; &apos;Enquire NowGet A Call BackLocate Us&apos;</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">SHOULD BE</div>
+                <div class="sm:col-span-10 text-emerald-700 dark:text-emerald-400 font-medium">At least 90% of the page&apos;s text in the HTML the server sends, before any script runs.</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">HOW</div>
+                <div class="sm:col-span-10 text-[var(--text-secondary)]">Server-render or pre-render the main content so it is in the initial HTML response.</div>
+
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">PAGES</div>
+                <div class="sm:col-span-10 text-xs text-[var(--text-secondary)]">
+                  &bull; <a href="https://shourya-bajaj-akurdi-pune.com/" target="_blank" class="text-blue-600 hover:underline">https://shourya-bajaj-akurdi-pune.com/</a> &mdash; 61% of visible content is readable without JS -- missing without JS: &apos;By clicking submit, you agree to our T&amp;C and Privacy Policy*&apos;; &apos;PULSAR 125 - DISC - CARBON GRAPHICS&apos;; &apos;Enquire NowGet A Call BackLocate Us&apos;
+                </div>
+              </div>
+            </div>
+
+            <!-- Action 3: HIGH - Page declares a meaningful entity type -->
+            <div class="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5 sm:p-6 space-y-3.5 shadow-xs">
+              <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-orange-500 text-white">HIGH</span>
+                <h3 class="text-sm sm:text-base font-bold text-[var(--text-primary)]">Page declares a meaningful entity type</h3>
+                <span class="text-xs text-[var(--text-muted)]">medium effort &middot; 1 page</span>
+              </div>
+              <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+                SiteNavigationElement and WebPage describe the page&apos;s furniture. An AI system needs to know what the page is ABOUT -- the organisation, the article, the product.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-12 gap-2 text-xs pt-1">
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">NOW</div>
+                <div class="sm:col-span-10 text-rose-600 dark:text-rose-400 font-medium">only structural types: GeoCoordinates, MotorcycleDealer, PostalAddress</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">SHOULD BE</div>
+                <div class="sm:col-span-10 text-emerald-700 dark:text-emerald-400 font-medium">@type names what the page is: Organization, Product, Service, Article or FAQPage.</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">HOW</div>
+                <div class="sm:col-span-10 text-[var(--text-secondary)]">Declare the page&apos;s substantive entity: Organization or LocalBusiness for the site, Article for editorial, Product/Service for offerings, FAQPage for Q&amp;A.</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">EXAMPLE</div>
+                <div class="sm:col-span-10">
+                  <div class="code-box rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)]/40 overflow-hidden">
+                    <pre class="p-3 text-xs font-mono text-[var(--text-primary)] overflow-x-auto whitespace-pre-wrap leading-relaxed"><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Your company",
+  "url": "https://shourya-bajaj-akurdi-pune.com/",
+  "logo": "https://shourya-bajaj-akurdi-pune.com/logo.png",
+  "sameAs": ["https://www.linkedin.com/company/..."]
+}
+&lt;/script&gt;</code></pre>
+                  </div>
+                </div>
+
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">PAGES</div>
+                <div class="sm:col-span-10 text-xs text-[var(--text-secondary)]">
+                  &bull; <a href="https://shourya-bajaj-akurdi-pune.com/" target="_blank" class="text-blue-600 hover:underline">https://shourya-bajaj-akurdi-pune.com/</a> &mdash; only structural types: GeoCoordinates, MotorcycleDealer, PostalAddress
+                </div>
+              </div>
+            </div>
+
+            <!-- Action 4: HIGH - Headings phrased as questions -->
+            <div class="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5 sm:p-6 space-y-3.5 shadow-xs">
+              <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-orange-500 text-white">HIGH</span>
+                <h3 class="text-sm sm:text-base font-bold text-[var(--text-primary)]">Headings phrased as questions</h3>
+                <span class="text-xs text-[var(--text-muted)]">medium effort &middot; 1 page</span>
+              </div>
+              <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+                Retrieval matches a user&apos;s question against your headings. A heading that reads &apos;Our Services&apos; matches nothing a person actually asks; &apos;What does a digital audit include?&apos; matches directly.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-12 gap-2 text-xs pt-1">
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">NOW</div>
+                <div class="sm:col-span-10 text-rose-600 dark:text-rose-400 font-medium">0 of 15 section headings are questions -- one question-led section (e.g. an FAQ block) is enough here</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">SHOULD BE</div>
+                <div class="sm:col-span-10 text-emerald-700 dark:text-emerald-400 font-medium">Several H2s phrased as the questions buyers ask, e.g. &quot;How much does X cost?&quot;.</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">HOW</div>
+                <div class="sm:col-span-10 text-[var(--text-secondary)]">Rewrite section headings as the questions they answer, using the phrasing your customers use.</div>
+
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">PAGES</div>
+                <div class="sm:col-span-10 text-xs text-[var(--text-secondary)]">
+                  &bull; <a href="https://shourya-bajaj-akurdi-pune.com/" target="_blank" class="text-blue-600 hover:underline">https://shourya-bajaj-akurdi-pune.com/</a> &mdash; 0 of 15 section headings are questions -- one question-led section (e.g. an FAQ block) is enough here
+                </div>
+              </div>
+            </div>
+
+            <!-- Action 5: HIGH - Main content can be isolated from boilerplate -->
+            <div class="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5 sm:p-6 space-y-3.5 shadow-xs">
+              <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-orange-500 text-white">HIGH</span>
+                <h3 class="text-sm sm:text-base font-bold text-[var(--text-primary)]">Main content can be isolated from boilerplate</h3>
+                <span class="text-xs text-[var(--text-muted)]">medium effort &middot; 1 page</span>
+              </div>
+              <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+                If a content extractor cannot separate the article from the chrome, the retrieved chunk is part navigation and part footer, which reads as noise.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-12 gap-2 text-xs pt-1">
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">NOW</div>
+                <div class="sm:col-span-10 text-rose-600 dark:text-rose-400 font-medium">only 45% of page text isolates as main content</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">SHOULD BE</div>
+                <div class="sm:col-span-10 text-emerald-700 dark:text-emerald-400 font-medium">The page&apos;s own content in one &lt;main&gt; element, at least half the page&apos;s words.</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">HOW</div>
+                <div class="sm:col-span-10 text-[var(--text-secondary)]">Use a single &lt;main&gt; or &lt;article&gt; wrapper around the real content and keep navigation outside it.</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">EXAMPLE</div>
+                <div class="sm:col-span-10">
+                  <div class="code-box rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)]/40 overflow-hidden">
+                    <pre class="p-3 text-xs font-mono text-[var(--text-primary)] overflow-x-auto whitespace-pre-wrap leading-relaxed"><code>&lt;header&gt;...navigation...&lt;/header&gt;
+&lt;main&gt;
+  &lt;h1&gt;...&lt;/h1&gt;
+  &lt;section&gt;...the page&apos;s own content...&lt;/section&gt;
+&lt;/main&gt;
+&lt;footer&gt;...&lt;/footer&gt;</code></pre>
+                  </div>
+                </div>
+
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">PAGES</div>
+                <div class="sm:col-span-10 text-xs text-[var(--text-secondary)]">
+                  &bull; <a href="https://shourya-bajaj-akurdi-pune.com/" target="_blank" class="text-blue-600 hover:underline">https://shourya-bajaj-akurdi-pune.com/</a> &mdash; only 45% of page text isolates as main content
+                </div>
+              </div>
+            </div>
+
+            <!-- Action 6: MEDIUM - Content declares publish/modified dates -->
+            <div class="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5 sm:p-6 space-y-3.5 shadow-xs">
+              <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-amber-500 text-white">MEDIUM</span>
+                <h3 class="text-sm sm:text-base font-bold text-[var(--text-primary)]">Content declares publish/modified dates</h3>
+                <span class="text-xs text-[var(--text-muted)]">small effort &middot; 1 page</span>
+              </div>
+              <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+                Without a date, an AI system cannot tell whether your page or a competitor&apos;s is current, and recency is a tiebreaker in what gets cited.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-12 gap-2 text-xs pt-1">
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">NOW</div>
+                <div class="sm:col-span-10 text-rose-600 dark:text-rose-400 font-medium">no dates (lower priority for non-editorial pages)</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">SHOULD BE</div>
+                <div class="sm:col-span-10 text-emerald-700 dark:text-emerald-400 font-medium">datePublished and dateModified in schema, and the date shown on the page.</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">HOW</div>
+                <div class="sm:col-span-10 text-[var(--text-secondary)]">Add datePublished and dateModified to the page schema and show the date in the visible content.</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">EXAMPLE</div>
+                <div class="sm:col-span-10">
+                  <div class="code-box rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)]/40 overflow-hidden">
+                    <pre class="p-3 text-xs font-mono text-[var(--text-primary)] overflow-x-auto whitespace-pre-wrap leading-relaxed"><code>"datePublished": "2026-01-15",
+"dateModified": "2026-10-01"</code></pre>
+                  </div>
+                </div>
+
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">PAGES</div>
+                <div class="sm:col-span-10 text-xs text-[var(--text-secondary)]">
+                  &bull; <a href="https://shourya-bajaj-akurdi-pune.com/" target="_blank" class="text-blue-600 hover:underline">https://shourya-bajaj-akurdi-pune.com/</a> &mdash; no dates (lower priority for non-editorial pages)
+                </div>
+              </div>
+            </div>
+
+            <!-- Action 7: MEDIUM - Useful title and meta description -->
+            <div class="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5 sm:p-6 space-y-3.5 shadow-xs">
+              <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-amber-500 text-white">MEDIUM</span>
+                <h3 class="text-sm sm:text-base font-bold text-[var(--text-primary)]">Useful title and meta description</h3>
+                <span class="text-xs text-[var(--text-muted)]">small effort &middot; 1 page</span>
+              </div>
+              <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+                These are often the only summary an AI system has before deciding whether to fetch the page at all.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-12 gap-2 text-xs pt-1">
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">NOW</div>
+                <div class="sm:col-span-10 text-rose-600 dark:text-rose-400 font-medium">meta description 208 chars</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">SHOULD BE</div>
+                <div class="sm:col-span-10 text-emerald-700 dark:text-emerald-400 font-medium">Title 30-60 characters ideal (15-70 passes); meta description 70-160 characters stating what the page answers.</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">HOW</div>
+                <div class="sm:col-span-10 text-[var(--text-secondary)]">Write a 30-60 character descriptive title and a 70-160 character meta description that states what the page answers.</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">EXAMPLE</div>
+                <div class="sm:col-span-10">
+                  <div class="code-box rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)]/40 overflow-hidden">
+                    <pre class="p-3 text-xs font-mono text-[var(--text-primary)] overflow-x-auto whitespace-pre-wrap leading-relaxed"><code>&lt;title&gt;Bajaj Bikes &amp; Motorcycles Price in Akurdi, pune | Your company&lt;/title&gt;
+&lt;meta name="description" content="70-160 characters on what this page answers."&gt;</code></pre>
+                  </div>
+                </div>
+
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">PAGES</div>
+                <div class="sm:col-span-10 text-xs text-[var(--text-secondary)]">
+                  &bull; <a href="https://shourya-bajaj-akurdi-pune.com/" target="_blank" class="text-blue-600 hover:underline">https://shourya-bajaj-akurdi-pune.com/</a> &mdash; meta description 208 chars
+                </div>
+              </div>
+            </div>
+
+            <!-- Action 8: MEDIUM - No skipped heading levels -->
+            <div class="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5 sm:p-6 space-y-3.5 shadow-xs">
+              <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-amber-500 text-white">MEDIUM</span>
+                <h3 class="text-sm sm:text-base font-bold text-[var(--text-primary)]">No skipped heading levels</h3>
+                <span class="text-xs text-[var(--text-muted)]">small effort &middot; 1 page</span>
+              </div>
+              <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+                A skipped level (h2 to h4) tells a chunker a subsection is a sibling when it is a child, so retrieved chunks lose their parent context and read as unrelated fragments.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-12 gap-2 text-xs pt-1">
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">NOW</div>
+                <div class="sm:col-span-10 text-rose-600 dark:text-rose-400 font-medium">1 skip(s): h2 &rarr; h5: About Us</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">SHOULD BE</div>
+                <div class="sm:col-span-10 text-emerald-700 dark:text-emerald-400 font-medium">Headings step down one level at a time: H1 &gt; H2 &gt; H3.</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">HOW</div>
+                <div class="sm:col-span-10 text-[var(--text-secondary)]">Fix the heading outline so levels descend one at a time.</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">EXAMPLE</div>
+                <div class="sm:col-span-10">
+                  <div class="code-box rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)]/40 overflow-hidden">
+                    <pre class="p-3 text-xs font-mono text-[var(--text-primary)] overflow-x-auto whitespace-pre-wrap leading-relaxed"><code>&lt;h2&gt;Section&lt;/h2&gt;
+&lt;h3&gt;Sub-section&lt;/h3&gt;  &lt;!-- not h2 -&gt; h4 --&gt;</code></pre>
+                  </div>
+                </div>
+
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">PAGES</div>
+                <div class="sm:col-span-10 text-xs text-[var(--text-secondary)]">
+                  &bull; <a href="https://shourya-bajaj-akurdi-pune.com/" target="_blank" class="text-blue-600 hover:underline">https://shourya-bajaj-akurdi-pune.com/</a> &mdash; 1 skip(s): h2 &rarr; h5: About Us
+                </div>
+              </div>
+            </div>
+
+            <!-- Action 9: MEDIUM - Semantic HTML marks the content boundaries -->
+            <div class="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5 sm:p-6 space-y-3.5 shadow-xs">
+              <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-amber-500 text-white">MEDIUM</span>
+                <h3 class="text-sm sm:text-base font-bold text-[var(--text-primary)]">Semantic HTML marks the content boundaries</h3>
+                <span class="text-xs text-[var(--text-muted)]">medium effort &middot; 1 page</span>
+              </div>
+              <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+                main/article tell an extractor where the content is and where the navigation ends. Without them, boilerplate gets pulled into the chunk and dilutes it.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-12 gap-2 text-xs pt-1">
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">NOW</div>
+                <div class="sm:col-span-10 text-rose-600 dark:text-rose-400 font-medium">only footer, section</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">SHOULD BE</div>
+                <div class="sm:col-span-10 text-emerald-700 dark:text-emerald-400 font-medium">Page content inside &lt;main&gt;, with units in &lt;article&gt; or &lt;section&gt;.</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">HOW</div>
+                <div class="sm:col-span-10 text-[var(--text-secondary)]">Wrap the page body in &lt;main&gt; and each content unit in &lt;article&gt; or &lt;section&gt;, instead of generic divs.</div>
+                
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">EXAMPLE</div>
+                <div class="sm:col-span-10">
+                  <div class="code-box rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)]/40 overflow-hidden">
+                    <pre class="p-3 text-xs font-mono text-[var(--text-primary)] overflow-x-auto whitespace-pre-wrap leading-relaxed"><code>&lt;header&gt;...navigation...&lt;/header&gt;
+&lt;main&gt;
+  &lt;h1&gt;...&lt;/h1&gt;
+  &lt;section&gt;...the page&apos;s own content...&lt;/section&gt;
+&lt;/main&gt;
+&lt;footer&gt;...&lt;/footer&gt;</code></pre>
+                  </div>
+                </div>
+
+                <div class="sm:col-span-2 font-bold uppercase tracking-wider text-[var(--text-muted)] text-[11px]">PAGES</div>
+                <div class="sm:col-span-10 text-xs text-[var(--text-secondary)]">
+                  &bull; <a href="https://shourya-bajaj-akurdi-pune.com/" target="_blank" class="text-blue-600 hover:underline">https://shourya-bajaj-akurdi-pune.com/</a> &mdash; only footer, section
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Page Detail Logic Script -->
+  <script>
+    function switchSubTab(tabId) {
+      const issuesBtn = document.getElementById('tab-nav-issues');
+      const actionsBtn = document.getElementById('tab-nav-actions');
+      const issuesPane = document.getElementById('subpane-issues');
+      const actionsPane = document.getElementById('subpane-actions');
+
+      if (tabId === 'actions') {
+        issuesBtn.classList.remove('text-blue-600', 'border-blue-600', 'font-semibold');
+        issuesBtn.classList.add('text-[var(--text-secondary)]', 'border-transparent', 'font-medium');
+        
+        actionsBtn.classList.remove('text-[var(--text-secondary)]', 'border-transparent', 'font-medium');
+        actionsBtn.classList.add('text-blue-600', 'border-blue-600', 'font-semibold');
+
+        issuesPane.classList.add('hidden');
+        actionsPane.classList.remove('hidden');
+        history.replaceState(null, null, '#actions');
+      } else {
+        actionsBtn.classList.remove('text-blue-600', 'border-blue-600', 'font-semibold');
+        actionsBtn.classList.add('text-[var(--text-secondary)]', 'border-transparent', 'font-medium');
+        
+        issuesBtn.classList.remove('text-[var(--text-secondary)]', 'border-transparent', 'font-medium');
+        issuesBtn.classList.add('text-blue-600', 'border-blue-600', 'font-semibold');
+
+        actionsPane.classList.add('hidden');
+        issuesPane.classList.remove('hidden');
+        history.replaceState(null, null, '#issues');
+      }
+
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    }
+
+    function setPageSort(sortType) {
+      const buttons = document.querySelectorAll('.page-sort-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('border-blue-500/40', 'bg-blue-50/70', 'dark:bg-blue-500/10', 'text-blue-600', 'dark:text-blue-400', 'font-semibold');
+        btn.classList.add('border-[var(--border-subtle)]', 'bg-[var(--bg-surface)]', 'text-[var(--text-secondary)]', 'font-medium');
+      });
+
+      const activeBtn = document.getElementById(`sort-btn-${sortType}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('border-[var(--border-subtle)]', 'bg-[var(--bg-surface)]', 'text-[var(--text-secondary)]', 'font-medium');
+        activeBtn.classList.add('border-blue-500/40', 'bg-blue-50/70', 'dark:bg-blue-500/10', 'text-blue-600', 'dark:text-blue-400', 'font-semibold');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.location.hash === '#actions') {
+        switchSubTab('actions');
+      } else {
+        switchSubTab('issues');
+      }
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>

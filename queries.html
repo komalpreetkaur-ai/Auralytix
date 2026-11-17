@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auralytix | Query Checks - AI Buyer Query Intelligence</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Custom Design System Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="relative">
+
+  <!-- Ambient Light Accents -->
+  <div class="ambient-glow"></div>
+  <div class="ambient-glow-secondary"></div>
+
+  <div class="flex min-h-screen">
+    
+    <!-- =========================================================================
+         LEFT SIDEBAR NAVIGATION
+         ========================================================================= -->
+    <aside class="w-64 flex-shrink-0 flex flex-col justify-between p-5 border-r border-[var(--border-subtle)] bg-[var(--bg-sidebar)] z-20">
+      <div class="space-y-6">
+        
+        <!-- Logo Brand Header -->
+        <div class="flex items-center justify-between pb-4 border-b border-[var(--border-subtle)]">
+          <a href="index.html" class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-xl shadow-md shadow-blue-500/25">
+              A
+            </div>
+            <div>
+              <span class="font-bold text-lg tracking-tight text-[var(--text-primary)]">
+                Auralytix
+              </span>
+              <p class="text-[11px] text-[var(--text-muted)] font-medium">Search Intelligence</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Navigation Sections -->
+        <nav class="space-y-6">
+          
+          <!-- Audits Group -->
+          <div>
+            <div class="text-[11px] font-bold uppercase tracking-wider text-[var(--text-muted)] px-3 mb-2">
+              Audits
+            </div>
+            <div class="space-y-1">
+              <a href="index.html" class="flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all">
+                <div class="flex items-center gap-2.5">
+                  <i data-lucide="layers" class="w-4 h-4"></i>
+                  <span>All audits</span>
+                </div>
+                <span class="text-[11px] px-2 py-0.5 rounded-full bg-[var(--bg-secondary)] text-[var(--text-muted)] font-mono">10</span>
+              </a>
+              <a href="#" class="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all">
+                <i data-lucide="calendar" class="w-4 h-4"></i>
+                <span>Scheduled crawls</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Visibility Group (Query Checks ACTIVE) -->
+          <div>
+            <div class="text-[11px] font-bold uppercase tracking-wider text-[var(--text-muted)] px-3 mb-2">
+              Visibility
+            </div>
+            <div class="space-y-1">
+              <a href="queries.html" class="flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-semibold bg-blue-600 text-white shadow-sm shadow-blue-600/30">
+                <div class="flex items-center gap-2.5">
+                  <i data-lucide="search-code" class="w-4 h-4"></i>
+                  <span>Query checks</span>
+                </div>
+                <span class="text-[11px] px-2 py-0.5 rounded-full bg-white/20 text-white font-mono">3</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Account Group -->
+          <div>
+            <div class="text-[11px] font-bold uppercase tracking-wider text-[var(--text-muted)] px-3 mb-2">
+              Account
+            </div>
+            <div class="space-y-1">
+              <div class="px-3.5 py-3 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-subtle)] space-y-2">
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-[var(--text-primary)] font-medium flex items-center gap-2">
+                    <i data-lucide="coins" class="w-4 h-4 text-amber-500"></i>
+                    Credits
+                  </span>
+                  <span id="sidebar-credits" class="font-mono font-bold text-amber-600 dark:text-amber-400 text-sm">787</span>
+                </div>
+                <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-1.5 overflow-hidden">
+                  <div class="bg-gradient-to-r from-amber-500 to-amber-400 h-1.5 rounded-full" style="width: 78.7%"></div>
+                </div>
+                <div class="flex items-center justify-between text-[11px] text-[var(--text-muted)] pt-0.5">
+                  <span>78.7% available</span>
+                  <button class="text-blue-600 dark:text-blue-400 hover:underline font-semibold">+ Top up</button>
+                </div>
+              </div>
+
+              <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all">
+                <i data-lucide="settings" class="w-4 h-4"></i>
+                <span>Settings</span>
+              </a>
+              <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-sm font-medium text-[var(--text-secondary)] hover:text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-500/10 transition-all">
+                <i data-lucide="log-out" class="w-4 h-4"></i>
+                <span>Sign out</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Bottom Explanatory Card: "How to read this" -->
+      <div class="space-y-4">
+        <div class="p-3.5 rounded-2xl bg-blue-50/70 dark:bg-slate-850/80 border border-blue-100 dark:border-white/10 text-xs space-y-2 shadow-sm">
+          <div class="flex items-center gap-2 text-[var(--text-primary)] font-semibold">
+            <i data-lucide="help-circle" class="w-4 h-4 text-blue-600 dark:text-blue-400 flex-shrink-0"></i>
+            <span>How to read this</span>
+          </div>
+          <p class="text-[11px] text-[var(--text-secondary)] leading-relaxed">
+            <strong class="font-semibold text-blue-700 dark:text-blue-300">AIO:</strong> Deterministic HTML parseability score from site structure.
+          </p>
+          <p class="text-[11px] text-[var(--text-secondary)] leading-relaxed">
+            <strong class="font-semibold text-emerald-700 dark:text-emerald-300">GEO:</strong> Measured by grounded Gemini probes approximating AI Overviews citation frequency.
+          </p>
+        </div>
+
+        <!-- User Workspace Card -->
+        <div class="flex items-center gap-3 pt-3 border-t border-[var(--border-subtle)]">
+          <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center font-bold text-xs text-white">
+            KP
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="text-xs font-semibold text-[var(--text-primary)] truncate">Komalpreet</div>
+            <div class="text-[10px] text-[var(--text-muted)] truncate">Enterprise Plan</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- =========================================================================
+         MAIN APPLICATION AREA
+         ========================================================================= -->
+    <main class="flex-1 flex flex-col min-w-0 overflow-y-auto z-10">
+      
+      <!-- Top Navigation & Global Header -->
+      <header class="h-16 px-8 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)] flex items-center justify-between sticky top-0 z-30 shadow-sm backdrop-blur-md bg-opacity-95">
+        <div class="flex items-center gap-3 text-sm">
+          <a href="index.html" class="text-[var(--text-muted)] hover:text-[var(--text-primary)] font-medium">Auralytix</a>
+          <span class="text-[var(--text-muted)]">/</span>
+          <span class="text-[var(--text-muted)]">Visibility</span>
+          <span class="text-[var(--text-muted)]">/</span>
+          <span class="text-[var(--text-primary)] font-semibold">Query checks</span>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <!-- Documentation Link -->
+          <a href="#" class="text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg hover:bg-[var(--bg-secondary)] transition-all">
+            <i data-lucide="book-open" class="w-4 h-4"></i>
+            <span>Query Docs</span>
+          </a>
+
+          <!-- Quick Refresh Button -->
+          <button id="refresh-btn" class="p-2 rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all" title="Refresh Data">
+            <i data-lucide="rotate-cw" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </header>
+
+      <div class="p-8 space-y-8 max-w-7xl w-full mx-auto">
+        
+        <!-- Header Banner & Value Proposition -->
+        <div class="pb-2">
+          <h1 class="text-3xl font-extrabold tracking-tight text-[var(--text-primary)]">
+            Query checks
+          </h1>
+          <p class="text-sm text-[var(--text-secondary)] mt-1 max-w-3xl">
+            Run your own buyer queries across AI engines and see whether each one names you, cites your site, ranks you — and who it names instead.
+          </p>
+        </div>
+
+
+        <!-- =========================================================================
+             SECTION: NEW CHECK (FORM COMMAND CENTER)
+             ========================================================================= -->
+        <section class="glass-panel p-6 space-y-6">
+          <div class="flex items-center justify-between border-b border-[var(--border-subtle)] pb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400">
+                <i data-lucide="search-check" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h2 class="text-lg font-bold text-[var(--text-primary)]">New check</h2>
+                <p class="text-xs text-[var(--text-secondary)]">Simulate real buyer prompts across AI engines and track competitor citation shares.</p>
+              </div>
+            </div>
+
+            <!-- Dynamic Cost Calculation Pill -->
+            <div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-xs font-medium">
+              <span class="text-[var(--text-muted)]">Estimated Cost:</span>
+              <span id="calculated-cost-badge" class="font-mono font-bold text-blue-600 dark:text-blue-400 text-sm">6 credits</span>
+            </div>
+          </div>
+
+          <form id="query-check-form" class="space-y-6">
+            
+            <!-- Row 1: Brand details (Brand name, Other names, Website domain) -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+              
+              <!-- Brand Name -->
+              <div class="md:col-span-4 space-y-2">
+                <label for="brand-name" class="block text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)]">
+                  Brand name <span class="text-rose-500">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="brand-name" 
+                  placeholder="Your brand name" 
+                  required 
+                  class="custom-input w-full"
+                >
+              </div>
+
+              <!-- Other Names -->
+              <div class="md:col-span-4 space-y-2">
+                <label for="other-names" class="block text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)]">
+                  Other names <span class="text-[var(--text-muted)] font-normal">(optional, comma-separated)</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="other-names" 
+                  placeholder="Short names, abbreviations" 
+                  class="custom-input w-full"
+                >
+              </div>
+
+              <!-- Website Domain -->
+              <div class="md:col-span-4 space-y-2">
+                <label for="website-domain" class="block text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)]">
+                  Website domain <span class="text-rose-500">*</span>
+                </label>
+                <div class="relative flex items-center">
+                  <div class="absolute left-3 text-xs font-mono text-[var(--text-muted)] select-none">
+                    https://
+                  </div>
+                  <input 
+                    type="text" 
+                    id="website-domain" 
+                    placeholder="yourbrand.com" 
+                    required 
+                    class="custom-input w-full pl-20 font-mono text-sm"
+                  >
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Row 2: Competitor domains -->
+            <div class="space-y-2">
+              <label class="block text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)]">
+                Competitor domains (comma-separated)
+              </label>
+              <div class="p-2.5 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-input)] min-h-[46px] flex flex-wrap items-center gap-2" id="competitor-chip-box">
+                <span class="chip" data-domain="competitor-one.com">
+                  competitor-one.com
+                  <span class="chip-remove" onclick="removeChip(this)">&times;</span>
+                </span>
+                <span class="chip" data-domain="competitor-two.com">
+                  competitor-two.com
+                  <span class="chip-remove" onclick="removeChip(this)">&times;</span>
+                </span>
+                <input 
+                  type="text" 
+                  id="competitor-input" 
+                  placeholder="Add competitor..." 
+                  class="bg-transparent border-none outline-none text-xs font-mono text-[var(--text-primary)] min-w-[130px] flex-1"
+                >
+              </div>
+              <p class="text-[11px] text-[var(--text-muted)]">Type domain and press Enter to add benchmark competitors.</p>
+            </div>
+
+            <!-- Row 3: Queries textarea -->
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <label for="queries-textarea" class="block text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)]">
+                  Queries — one per line, as a buyer would ask <span class="text-rose-500">*</span>
+                </label>
+                <span id="query-counter-badge" class="text-xs font-mono font-bold text-blue-600 dark:text-blue-400">
+                  1 query entered
+                </span>
+              </div>
+              <textarea 
+                id="queries-textarea" 
+                rows="4" 
+                required
+                class="custom-input w-full font-sans text-sm leading-relaxed resize-y"
+                placeholder="Which are the best [your category] companies in India?&#10;What should I look for when choosing a [your category] provider?"
+              >Which are the best automobile service providers in Philippines?</textarea>
+              <p class="text-[11px] text-[var(--text-muted)]">Each query is probed across all selected engines from each target buyer market.</p>
+            </div>
+
+            <!-- Row 4: Buyer markets -->
+            <div class="space-y-2">
+              <label class="block text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)]">
+                Buyer markets — where the people asking are (each query is asked from each, up to 5)
+              </label>
+              <div class="flex flex-wrap items-center gap-2 p-2.5 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-input)] min-h-[46px]" id="market-chips-box">
+                <span class="market-chip" data-market="India">
+                  <span>🇮🇳 India</span>
+                  <span class="remove-market text-xs" onclick="removeMarket(this)">&times;</span>
+                </span>
+                
+                <!-- Add Market Dropdown -->
+                <div class="relative">
+                  <select id="add-market-select" class="text-xs font-medium bg-[var(--bg-secondary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded-lg px-2.5 py-1 cursor-pointer hover:border-[var(--border-medium)]">
+                    <option value="">+ Add another market...</option>
+                    <option value="United States">🇺🇸 United States</option>
+                    <option value="United Kingdom">🇬🇧 United Kingdom</option>
+                    <option value="Japan">🇯🇵 Japan</option>
+                    <option value="Philippines">🇵🇭 Philippines</option>
+                    <option value="Germany">🇩🇪 Germany</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 5: AI Engines Multi-Select Toggle Cards -->
+            <div class="space-y-2">
+              <label class="block text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)]">
+                Engines to Probe
+              </label>
+              <div class="flex flex-wrap items-center gap-3">
+                
+                <!-- Gemini Engine Pill (Default Active) -->
+                <div class="engine-pill active engine-gemini" data-engine="gemini">
+                  <i data-lucide="check-square" class="w-4 h-4 text-blue-600"></i>
+                  <span>Gemini</span>
+                  <span class="text-[10px] px-1.5 py-0.2 rounded bg-blue-500/10 text-blue-600 font-mono">Search Grounding</span>
+                </div>
+
+                <!-- ChatGPT Engine Pill -->
+                <div class="engine-pill engine-chatgpt" data-engine="chatgpt">
+                  <i data-lucide="square" class="w-4 h-4 text-slate-400"></i>
+                  <span>ChatGPT</span>
+                  <span class="text-[10px] px-1.5 py-0.2 rounded bg-emerald-500/10 text-emerald-600 font-mono">GPT-4o</span>
+                </div>
+
+                <!-- Perplexity Engine Pill -->
+                <div class="engine-pill engine-perplexity" data-engine="perplexity">
+                  <i data-lucide="square" class="w-4 h-4 text-slate-400"></i>
+                  <span>Perplexity</span>
+                  <span class="text-[10px] px-1.5 py-0.2 rounded bg-cyan-500/10 text-cyan-600 font-mono">Pro Search</span>
+                </div>
+
+                <!-- Claude Engine Pill (Default Active) -->
+                <div class="engine-pill active engine-claude" data-engine="claude">
+                  <i data-lucide="check-square" class="w-4 h-4 text-amber-500"></i>
+                  <span>Claude</span>
+                  <span class="text-[10px] px-1.5 py-0.2 rounded bg-amber-500/10 text-amber-600 font-mono">Sonnet 3.5</span>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Row 6: Runs per query & Client label -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+              
+              <!-- Runs per query -->
+              <div class="md:col-span-4 space-y-2">
+                <label for="runs-per-query" class="block text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)]">
+                  Runs per query
+                </label>
+                <div class="flex items-center gap-2">
+                  <button type="button" id="decrement-runs" class="w-9 h-9 rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-secondary)] hover:bg-slate-200 dark:hover:bg-white/10 flex items-center justify-center font-bold text-[var(--text-primary)]">
+                    -
+                  </button>
+                  <input 
+                    type="number" 
+                    id="runs-per-query" 
+                    value="3" 
+                    min="1" 
+                    max="10" 
+                    class="custom-input text-center font-mono font-bold w-20"
+                  >
+                  <button type="button" id="increment-runs" class="w-9 h-9 rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-secondary)] hover:bg-slate-200 dark:hover:bg-white/10 flex items-center justify-center font-bold text-[var(--text-primary)]">
+                    +
+                  </button>
+                  <span class="text-xs text-[var(--text-muted)] ml-2">multi-pass variance check</span>
+                </div>
+              </div>
+
+              <!-- Client Label -->
+              <div class="md:col-span-8 space-y-2">
+                <label for="client-label" class="block text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)]">
+                  Client label <span class="text-[var(--text-muted)] font-normal">(optional)</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="client-label" 
+                  placeholder="e.g. Internal Audit, Suzuki Q4" 
+                  class="custom-input w-full"
+                >
+              </div>
+
+            </div>
+
+            <!-- Row 7: Brand facts (optional) -->
+            <div class="space-y-2">
+              <label for="brand-facts" class="block text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)]">
+                Brand facts (optional) — checked against what AI says
+              </label>
+              <textarea 
+                id="brand-facts" 
+                rows="2" 
+                class="custom-input w-full text-xs font-sans leading-relaxed resize-y"
+                placeholder="Founded in [year] in [city]. Offers [products / services]. Serves [markets / clients]."
+              ></textarea>
+              <p class="text-[11px] text-[var(--text-muted)]">Verified against AI hallucinated responses to flag incorrect facts.</p>
+            </div>
+
+            <!-- Row 8: Action Bar with Calculation -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-3 border-t border-[var(--border-subtle)]">
+              <div class="text-xs text-[var(--text-secondary)] flex items-center gap-2">
+                <i data-lucide="calculator" class="w-4 h-4 text-blue-600"></i>
+                <span id="credit-formula-display">
+                  Formula: 1 query × 1 market × 2 engines × 3 runs = <strong>6 credits</strong>
+                </span>
+              </div>
+
+              <div class="flex items-center gap-3 w-full sm:w-auto">
+                <button 
+                  type="submit" 
+                  id="run-check-btn"
+                  class="w-full sm:w-auto flex items-center justify-center gap-2.5 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm shadow-md shadow-blue-600/30 transition-all active:scale-95"
+                >
+                  <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+                  <span id="run-btn-text">Run check • 6 credits</span>
+                </button>
+              </div>
+            </div>
+
+          </form>
+        </section>
+
+        <!-- =========================================================================
+             SECTION: RECENT CHECKS (INTELLIGENCE TABLE)
+             ========================================================================= -->
+        <section class="glass-panel p-6 space-y-5">
+          
+          <!-- Table Toolbar Controls -->
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <h2 class="text-lg font-bold text-[var(--text-primary)]">Recent checks</h2>
+              <span id="checks-count-badge" class="px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-[var(--text-secondary)]">
+                3 shown
+              </span>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3">
+              <!-- Search Input -->
+              <div class="relative min-w-[220px]">
+                <i data-lucide="search" class="w-4 h-4 text-[var(--text-muted)] absolute left-3 top-3"></i>
+                <input 
+                  type="text" 
+                  id="table-search" 
+                  placeholder="Filter brand or domain..." 
+                  class="custom-input pl-9 py-2 text-xs w-full"
+                >
+              </div>
+
+              <!-- Engine Filter Dropdown -->
+              <select id="engine-filter" class="custom-input py-2 text-xs cursor-pointer">
+                <option value="all">All Engines</option>
+                <option value="gemini">Gemini Probed</option>
+                <option value="chatgpt">ChatGPT Probed</option>
+                <option value="claude">Claude Probed</option>
+              </select>
+
+              <!-- Sort Option -->
+              <select id="sort-filter" class="custom-input py-2 text-xs cursor-pointer">
+                <option value="newest">Sort: Newest First</option>
+                <option value="highest-index">Highest Citation Index</option>
+                <option value="most-queries">Most Queries</option>
+              </select>
+
+              <!-- Export CSV Button -->
+              <button id="export-csv-btn" class="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-medium bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[var(--border-medium)] text-[var(--text-primary)] transition-all shadow-sm">
+                <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                <span>Export CSV</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- The Table -->
+          <div class="data-table-container">
+            <table class="data-table" id="checks-table">
+              <thead>
+                <tr>
+                  <th>Brand & Domain</th>
+                  <th>Queries</th>
+                  <th>Engines</th>
+                  <th>Status</th>
+                  <th>
+                    <div class="flex items-center gap-1.5">
+                      <span>Index</span>
+                      <div class="tooltip-container">
+                        <i data-lucide="info" class="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 tooltip-trigger cursor-pointer"></i>
+                        <div class="tooltip-content">
+                          <strong>AI Citation Index:</strong> Proportion of runs where the target brand was cited as a recommended provider.
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <th>Credits</th>
+                  <th>When</th>
+                  <th class="text-right w-28">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="checks-tbody">
+                <!-- 1: Suzuki -->
+                <tr class="group" onclick="openQueryModal(1)">
+                  <td>
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-7 h-7 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 font-mono text-xs font-semibold">
+                        SU
+                      </div>
+                      <div>
+                        <span class="font-bold text-[var(--text-primary)] hover:text-blue-600 transition-colors">Suzuki</span>
+                        <span class="text-xs text-[var(--text-muted)] font-mono ml-1.5">suzuki.com.ph</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="px-2 py-0.5 rounded text-xs font-mono font-semibold bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-[var(--text-secondary)]">
+                      1
+                    </span>
+                  </td>
+                  <td>
+                    <div class="flex flex-wrap items-center gap-1">
+                      <span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">Gemini</span>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="status-indicator status-complete">
+                      <span class="status-dot"></span>
+                      <span>Complete</span>
+                    </span>
+                  </td>
+                  <td><span class="score-badge score-low"><span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>0.0</span></td>
+                  <td>
+                    <span class="font-mono text-xs font-semibold text-[var(--text-secondary)]">2</span>
+                  </td>
+                  <td>
+                    <span class="text-xs font-mono text-[var(--text-secondary)]">2026-10-21 09:47</span>
+                  </td>
+                  <td class="text-right">
+                    <div class="flex items-center justify-end">
+                      <button onclick="event.stopPropagation(); openQueryModal(1)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-50 hover:bg-blue-100 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 border border-blue-200 dark:border-blue-500/20 transition-all shadow-2xs hover:shadow-xs active:scale-95" title="View Full Report">
+                        <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                        <span>Report</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- 2: Glocal360 -->
+                <tr class="group" onclick="openQueryModal(2)">
+                  <td>
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-7 h-7 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 font-mono text-xs font-semibold">
+                        GL
+                      </div>
+                      <div>
+                        <span class="font-bold text-[var(--text-primary)] hover:text-blue-600 transition-colors">Glocal360</span>
+                        <span class="text-xs text-[var(--text-muted)] font-mono ml-1.5">glocal360.ai</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="px-2 py-0.5 rounded text-xs font-mono font-semibold bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-[var(--text-secondary)]">
+                      1
+                    </span>
+                  </td>
+                  <td>
+                    <div class="flex flex-wrap items-center gap-1">
+                      <span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">Gemini</span><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">ChatGPT</span><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20">Perplexity</span><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">Claude</span>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="status-indicator status-complete">
+                      <span class="status-dot"></span>
+                      <span>Complete</span>
+                    </span>
+                  </td>
+                  <td><span class="score-badge score-low"><span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>0.0</span></td>
+                  <td>
+                    <span class="font-mono text-xs font-semibold text-[var(--text-secondary)]">-</span>
+                  </td>
+                  <td>
+                    <span class="text-xs font-mono text-[var(--text-secondary)]">2026-10-16 09:48</span>
+                  </td>
+                  <td class="text-right">
+                    <div class="flex items-center justify-end">
+                      <button onclick="event.stopPropagation(); openQueryModal(2)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-50 hover:bg-blue-100 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 border border-blue-200 dark:border-blue-500/20 transition-all shadow-2xs hover:shadow-xs active:scale-95" title="View Full Report">
+                        <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                        <span>Report</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- 3: Glocal360 -->
+                <tr class="group" onclick="openQueryModal(3)">
+                  <td>
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-7 h-7 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 font-mono text-xs font-semibold">
+                        GL
+                      </div>
+                      <div>
+                        <span class="font-bold text-[var(--text-primary)] hover:text-blue-600 transition-colors">Glocal360</span>
+                        <span class="text-xs text-[var(--text-muted)] font-mono ml-1.5">glocal360.ai</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="px-2 py-0.5 rounded text-xs font-mono font-semibold bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-[var(--text-secondary)]">
+                      1
+                    </span>
+                  </td>
+                  <td>
+                    <div class="flex flex-wrap items-center gap-1">
+                      <span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">Gemini</span><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">ChatGPT</span><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20">Perplexity</span><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">Claude</span>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="status-indicator status-complete">
+                      <span class="status-dot"></span>
+                      <span>Complete</span>
+                    </span>
+                  </td>
+                  <td><span class="score-badge score-low"><span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>0.0</span></td>
+                  <td>
+                    <span class="font-mono text-xs font-semibold text-[var(--text-secondary)]">-</span>
+                  </td>
+                  <td>
+                    <span class="text-xs font-mono text-[var(--text-secondary)]">2026-10-16 09:33</span>
+                  </td>
+                  <td class="text-right">
+                    <div class="flex items-center justify-end">
+                      <button onclick="event.stopPropagation(); openQueryModal(3)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-50 hover:bg-blue-100 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 border border-blue-200 dark:border-blue-500/20 transition-all shadow-2xs hover:shadow-xs active:scale-95" title="View Full Report">
+                        <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                        <span>Report</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Table Footer Pagination -->
+          <div class="flex items-center justify-between pt-3 text-xs text-[var(--text-muted)] border-t border-[var(--border-subtle)]">
+            <span id="pagination-info">Showing 3 of 3 checks</span>
+            <div class="flex items-center gap-2">
+              <button class="px-2.5 py-1 rounded border border-[var(--border-subtle)] hover:border-[var(--border-medium)] text-[var(--text-secondary)] disabled:opacity-40" disabled>
+                Previous
+              </button>
+              <button class="px-2.5 py-1 rounded border border-[var(--border-subtle)] hover:border-[var(--border-medium)] text-[var(--text-secondary)] disabled:opacity-40" disabled>
+                Next
+              </button>
+            </div>
+          </div>
+
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- =========================================================================
+       QUERY DETAIL MODAL (Deep Dive View)
+       ========================================================================= -->
+  <div class="modal-backdrop" id="query-modal">
+    <div class="modal-content p-6 space-y-6">
+      <div class="flex items-center justify-between border-b border-[var(--border-subtle)] pb-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold">
+            <i data-lucide="bot" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-[var(--text-primary)]" id="modal-brand-title">Suzuki</h3>
+            <p class="text-xs text-[var(--text-secondary)]" id="modal-query-date">Audited on 2026-10-21 09:47</p>
+          </div>
+        </div>
+        <button id="close-modal-btn" class="p-1.5 rounded-lg text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body Scores Breakdown -->
+      <div class="grid grid-cols-3 gap-3 text-center">
+        <div class="p-3 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-subtle)]">
+          <div class="text-[11px] font-semibold text-[var(--text-muted)] uppercase">Citation Index</div>
+          <div class="text-2xl font-extrabold font-mono text-[var(--text-primary)] mt-1" id="modal-index-score">0.0%</div>
+          <span class="text-[10px] text-rose-600 font-semibold">Not Cited</span>
+        </div>
+        <div class="p-3 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-subtle)]">
+          <div class="text-[11px] font-semibold text-[var(--text-muted)] uppercase">Queries Tested</div>
+          <div class="text-2xl font-extrabold font-mono text-[var(--text-primary)] mt-1" id="modal-queries-count">1</div>
+          <span class="text-[10px] text-blue-600 font-semibold">Buyer Prompt</span>
+        </div>
+        <div class="p-3 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-subtle)]">
+          <div class="text-[11px] font-semibold text-[var(--text-muted)] uppercase">Engines Probed</div>
+          <div class="text-2xl font-extrabold font-mono text-[var(--text-primary)] mt-1" id="modal-engines-count">1</div>
+          <span class="text-[10px] text-emerald-600 font-semibold" id="modal-engines-names">Gemini</span>
+        </div>
+      </div>
+
+      <!-- Engine AI Answer Drill-down -->
+      <div class="space-y-3">
+        <h4 class="text-sm font-bold text-[var(--text-primary)]">AI Engine Responses & Competitors Named</h4>
+        <div class="space-y-3" id="modal-engine-responses">
+          <!-- Populated by queries.js -->
+        </div>
+      </div>
+
+      <div class="flex justify-end gap-3 pt-3 border-t border-[var(--border-subtle)]">
+        <button id="modal-close-action" class="px-4 py-2 rounded-xl text-xs font-semibold bg-[var(--bg-surface)] border border-[var(--border-subtle)] text-[var(--text-primary)] hover:border-[var(--border-medium)]">
+          Close
+        </button>
+        <button class="px-4 py-2 rounded-xl text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-600/25">
+          Download PDF Report
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Logic -->
+  <script src="queries.js"></script>
+</body>
+</html>

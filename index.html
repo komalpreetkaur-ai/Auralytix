@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auralytix | AI Search & GEO Intelligence Platform</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Custom Design System Styles -->
+  <link rel="stylesheet" href="styles.css?v=4">
+</head>
+<body class="relative">
+
+  <!-- Ambient Light Accents -->
+  <div class="ambient-glow"></div>
+  <div class="ambient-glow-secondary"></div>
+
+  <div class="flex min-h-screen">
+    
+    <!-- =========================================================================
+         LEFT SIDEBAR NAVIGATION (Light Mode Clean Architecture)
+         ========================================================================= -->
+    <aside class="w-64 flex-shrink-0 flex flex-col justify-between p-5 border-r border-[var(--border-subtle)] bg-[var(--bg-sidebar)] z-20">
+      <div class="space-y-6">
+        
+        <!-- Logo Brand Header -->
+        <div class="flex items-center justify-between pb-4 border-b border-[var(--border-subtle)]">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-xl shadow-md shadow-blue-500/25">
+              A
+            </div>
+            <div>
+              <span class="font-bold text-lg tracking-tight text-[var(--text-primary)]">
+                Auralytix
+              </span>
+              <p class="text-[11px] text-[var(--text-muted)] font-medium">Search Intelligence</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Sections -->
+        <nav class="space-y-6">
+          
+          <!-- Audits Group -->
+          <div>
+            <div class="text-[11px] font-bold uppercase tracking-wider text-[var(--text-muted)] px-3 mb-2">
+              Audits
+            </div>
+            <div class="space-y-1">
+              <a href="#" class="flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-semibold bg-blue-600 text-white shadow-sm shadow-blue-600/30">
+                <div class="flex items-center gap-2.5">
+                  <i data-lucide="layers" class="w-4 h-4"></i>
+                  <span>All audits</span>
+                </div>
+                <span class="text-[11px] px-2 py-0.5 rounded-full bg-white/20 text-white font-mono">10</span>
+              </a>
+              <a href="#" class="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all">
+                <i data-lucide="calendar" class="w-4 h-4"></i>
+                <span>Scheduled crawls</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Visibility Group -->
+          <div>
+            <div class="text-[11px] font-bold uppercase tracking-wider text-[var(--text-muted)] px-3 mb-2">
+              Visibility
+            </div>
+            <div class="space-y-1">
+              <a href="queries.html" class="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all">
+                <i data-lucide="search-code" class="w-4 h-4"></i>
+                <span>Query checks</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Account Group -->
+          <div>
+            <div class="text-[11px] font-bold uppercase tracking-wider text-[var(--text-muted)] px-3 mb-2">
+              Account
+            </div>
+            <div class="space-y-1">
+              <div class="px-3.5 py-3 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-subtle)] space-y-2">
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-[var(--text-primary)] font-medium flex items-center gap-2">
+                    <i data-lucide="coins" class="w-4 h-4 text-amber-500"></i>
+                    Credits
+                  </span>
+                  <span id="sidebar-credits" class="font-mono font-bold text-amber-600 dark:text-amber-400 text-sm">888</span>
+                </div>
+                <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-1.5 overflow-hidden">
+                  <div class="bg-gradient-to-r from-amber-500 to-amber-400 h-1.5 rounded-full" style="width: 88.8%"></div>
+                </div>
+                <div class="flex items-center justify-between text-[11px] text-[var(--text-muted)] pt-0.5">
+                  <span>88.8% available</span>
+                  <button class="text-blue-600 dark:text-blue-400 hover:underline font-semibold">+ Top up</button>
+                </div>
+              </div>
+
+              <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all">
+                <i data-lucide="settings" class="w-4 h-4"></i>
+                <span>Settings</span>
+              </a>
+              <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-sm font-medium text-[var(--text-secondary)] hover:text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-500/10 transition-all">
+                <i data-lucide="log-out" class="w-4 h-4"></i>
+                <span>Sign out</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Bottom Explanatory Card: "How to read this" -->
+      <div class="space-y-4">
+        <div class="p-3.5 rounded-2xl bg-blue-50/70 dark:bg-slate-850/80 border border-blue-100 dark:border-white/10 text-xs space-y-2 shadow-sm">
+          <div class="flex items-center gap-2 text-[var(--text-primary)] font-semibold">
+            <i data-lucide="help-circle" class="w-4 h-4 text-blue-600 dark:text-blue-400 flex-shrink-0"></i>
+            <span>How to read this</span>
+          </div>
+          <p class="text-[11px] text-[var(--text-secondary)] leading-relaxed">
+            <strong class="font-semibold text-blue-700 dark:text-blue-300">AIO:</strong> Deterministic HTML parseability score from site structure.
+          </p>
+          <p class="text-[11px] text-[var(--text-secondary)] leading-relaxed">
+            <strong class="font-semibold text-emerald-700 dark:text-emerald-300">GEO:</strong> Probes Gemini Search grounding to estimate AI Overview citations.
+          </p>
+        </div>
+
+        <!-- User Workspace Card -->
+        <div class="flex items-center gap-3 pt-3 border-t border-[var(--border-subtle)]">
+          <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center font-bold text-xs text-white">
+            KP
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="text-xs font-semibold text-[var(--text-primary)] truncate">Komalpreet</div>
+            <div class="text-[10px] text-[var(--text-muted)] truncate">Enterprise Plan</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- =========================================================================
+         MAIN APPLICATION AREA
+         ========================================================================= -->
+    <main class="flex-1 flex flex-col min-w-0 overflow-y-auto z-10">
+      
+      <!-- Top Navigation & Global Header -->
+      <header class="h-16 px-8 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)] flex items-center justify-between sticky top-0 z-30 shadow-sm backdrop-blur-md bg-opacity-95">
+        <div class="flex items-center gap-3 text-sm">
+          <span class="text-[var(--text-muted)] font-medium">Auralytix</span>
+          <span class="text-[var(--text-muted)]">/</span>
+          <span class="text-[var(--text-primary)] font-semibold">Audits Overview</span>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <!-- Documentation Link -->
+          <a href="#" class="text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg hover:bg-[var(--bg-secondary)] transition-all">
+            <i data-lucide="book-open" class="w-4 h-4"></i>
+            <span>Docs</span>
+          </a>
+
+          <!-- Quick Refresh Button -->
+          <button id="refresh-btn" class="p-2 rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all" title="Refresh Data">
+            <i data-lucide="rotate-cw" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </header>
+
+      <div class="p-6 lg:p-8 space-y-5 max-w-7xl w-full mx-auto">
+        
+        <!-- Header Banner & Value Proposition -->
+        <div class="pb-1">
+          <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-[var(--text-primary)]">
+            Auralytix
+          </h1>
+          <p class="text-xs sm:text-sm text-[var(--text-secondary)] mt-1 max-w-2xl">
+            Crawl a site, score how well AI can parse and quote it, and get an actionable, weighted visibility roadmap.
+          </p>
+        </div>
+
+
+        <!-- =========================================================================
+             SECTION: RUN AN AUDIT (COMMAND HUB FORM - COLLAPSIBLE)
+             ========================================================================= -->
+        <section class="glass-panel overflow-hidden transition-all duration-300" id="audit-form-section">
+          <!-- Collapsible Header Bar -->
+          <div 
+            class="flex items-center justify-between p-4 sm:p-5 cursor-pointer select-none hover:bg-[var(--bg-secondary)]/50 transition-colors"
+            id="audit-section-header"
+            role="button"
+            tabindex="0"
+            aria-expanded="false"
+            aria-controls="audit-form-collapse"
+          >
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
+                <i data-lucide="play" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h2 class="text-base sm:text-lg font-bold text-[var(--text-primary)]">Run an audit</h2>
+                <p class="text-xs text-[var(--text-secondary)] mt-0.5">Configure crawl parameters and AI citation probing engines.</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <button 
+                type="button" 
+                id="toggle-audit-btn" 
+                class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white shadow-sm shadow-blue-600/20 transition-all active:scale-95"
+              >
+                <i data-lucide="plus" id="toggle-audit-icon" class="w-3.5 h-3.5"></i>
+                <span id="toggle-audit-text">New Audit</span>
+                <i data-lucide="chevron-down" id="toggle-audit-chevron" class="w-4 h-4 transition-transform duration-200"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Collapsible Body (Hidden by default to show Recent Audits table before first scroll) -->
+          <div id="audit-form-collapse" style="display: none;" class="hidden border-t border-[var(--border-subtle)] p-6 space-y-6">
+            <form id="audit-form" class="space-y-6">
+            <!-- Row 1: Site URL, Max Pages, Client Label -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-end">
+              
+              <!-- Site URL Input -->
+              <div class="md:col-span-5 space-y-2">
+                <label for="site-url" class="block text-xs font-semibold text-[var(--text-secondary)]">
+                  Site URL <span class="text-rose-500">*</span>
+                </label>
+                <div class="relative flex items-center">
+                  <div class="absolute left-3 text-xs font-mono text-[var(--text-muted)] select-none">
+                    https://
+                  </div>
+                  <input 
+                    type="text" 
+                    id="site-url" 
+                    placeholder="example.com" 
+                    required 
+                    class="custom-input w-full pl-20 font-mono text-sm"
+                  >
+                  <button type="button" id="clear-url-btn" class="absolute right-3 text-[var(--text-muted)] hover:text-[var(--text-primary)] text-xs hidden">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Max Pages Selector with Quick Pills & Custom Input -->
+              <div class="md:col-span-4 space-y-2">
+                <div class="flex items-center justify-between">
+                  <label for="max-pages" class="block text-xs font-semibold text-[var(--text-secondary)]">
+                    Max Pages
+                  </label>
+                  <span id="pages-label-display" class="text-xs font-mono text-blue-600 dark:text-blue-400 font-bold">10 pages</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" class="pill-option active" data-pages="10">10</button>
+                  <button type="button" class="pill-option" data-pages="25">25</button>
+                  <button type="button" class="pill-option" data-pages="50">50</button>
+                  <button type="button" class="pill-option" data-pages="100">100</button>
+                  <div class="relative flex-1 min-w-[76px]">
+                    <input 
+                      type="number" 
+                      id="custom-pages-input" 
+                      min="1" 
+                      max="10000" 
+                      placeholder="Custom" 
+                      class="custom-input py-1.5 px-2.5 text-xs font-mono w-full text-center"
+                      title="Enter custom number of pages"
+                    >
+                  </div>
+                  <input type="hidden" id="max-pages" value="10">
+                </div>
+              </div>
+
+              <!-- Client Label Input -->
+              <div class="md:col-span-3 space-y-2">
+                <label for="client-label" class="block text-xs font-semibold text-[var(--text-secondary)]">
+                  Client Label <span class="text-[var(--text-muted)] font-normal">(optional)</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="client-label" 
+                  placeholder="e.g. Suzuki, AdGlobal" 
+                  class="custom-input w-full"
+                >
+              </div>
+
+            </div>
+
+            <!-- Row 2: Competitor domains & Markets (GEO) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              
+              <!-- Competitor Domains Input -->
+              <div class="space-y-2">
+                <label for="competitor-domains" class="block text-xs font-semibold text-[var(--text-secondary)]">
+                  Competitor domains (GEO, comma-separated)
+                </label>
+                <input 
+                  type="text" 
+                  id="competitor-domains" 
+                  placeholder="rival-one.com, rival-two.com" 
+                  class="custom-input w-full text-sm"
+                >
+              </div>
+
+              <!-- Markets (GEO) Input -->
+              <div class="space-y-2">
+                <label for="geo-markets" class="block text-xs font-semibold text-[var(--text-secondary)]">
+                  Markets (GEO) — where the buyers are
+                </label>
+                <input 
+                  type="text" 
+                  id="geo-markets" 
+                  placeholder="Search a country or city (default: India)" 
+                  class="custom-input w-full text-sm"
+                >
+              </div>
+
+            </div>
+
+            <!-- Row 3: GEO Intelligence Engine Add-on Card -->
+            <div class="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-5 space-y-4 transition-all" id="geo-container">
+              
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex items-start gap-3">
+                  <label class="toggle-switch mt-0.5">
+                    <input type="checkbox" id="measure-geo-toggle">
+                    <span class="toggle-slider"></span>
+                  </label>
+                  <div>
+                    <div class="flex items-center gap-2">
+                      <span class="font-bold text-sm text-[var(--text-primary)]">
+                        Measure GEO too (Generative Engine Optimization)
+                      </span>
+                      <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
+                        +100 credits
+                      </span>
+                    </div>
+                    <p class="text-xs text-[var(--text-secondary)] mt-1 max-w-3xl leading-relaxed">
+                      Probes Gemini with Google Search grounding to evaluate whether this site is actually cited and quoted in real AI Overviews. Adds 100 credits (+50 per extra target market).
+                    </p>
+                  </div>
+                </div>
+
+                <div class="hidden sm:flex items-center gap-1.5 text-xs text-[var(--text-muted)] font-mono">
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5 text-blue-600 dark:text-blue-400"></i>
+                  <span>Gemini Grounded</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Action Bar -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+              <div class="text-xs text-[var(--text-muted)] flex items-center gap-2">
+                <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600 dark:text-emerald-400"></i>
+                <span>Deterministic HTML parser & AI probe guarantees accurate scores.</span>
+              </div>
+
+              <div class="flex items-center gap-3 w-full sm:w-auto">
+                <button 
+                  type="button"
+                  id="cancel-audit-btn"
+                  class="px-4 py-2.5 rounded-xl border border-[var(--border-subtle)] text-xs font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-all"
+                >
+                  Collapse
+                </button>
+                <button 
+                  type="submit" 
+                  id="start-audit-btn"
+                  class="w-full sm:w-auto flex items-center justify-center gap-2.5 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm shadow-md shadow-blue-600/30 transition-all active:scale-95"
+                >
+                  <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+                  <span id="start-btn-text">Start Audit • 10 credits</span>
+                </button>
+              </div>
+            </div>
+
+          </form>
+          </div>
+        </section>
+
+        <!-- =========================================================================
+             SECTION: RECENT AUDITS (INTELLIGENCE TABLE)
+             ========================================================================= -->
+        <section class="glass-panel p-6 space-y-5">
+          
+          <!-- Table Toolbar Controls -->
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <h2 class="text-lg font-bold text-[var(--text-primary)]">Recent audits</h2>
+              <span id="audits-count-badge" class="px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-[var(--text-secondary)]">
+                10 shown
+              </span>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3">
+              <!-- Search Input -->
+              <div class="relative min-w-[220px]">
+                <i data-lucide="search" class="w-4 h-4 text-[var(--text-muted)] absolute left-3 top-3"></i>
+                <input 
+                  type="text" 
+                  id="table-search" 
+                  placeholder="Filter site or client..." 
+                  class="custom-input pl-9 py-2 text-xs w-full"
+                >
+              </div>
+
+              <!-- Status Filter Dropdown -->
+              <select id="status-filter" class="custom-input py-2 text-xs cursor-pointer">
+                <option value="all">All Statuses</option>
+                <option value="Complete">Complete Only</option>
+                <option value="Failed">Failed Only</option>
+              </select>
+
+              <!-- Sort Option -->
+              <select id="sort-filter" class="custom-input py-2 text-xs cursor-pointer">
+                <option value="newest">Sort: Newest First</option>
+                <option value="highest-aio">Highest AIO Score</option>
+                <option value="highest-geo">Highest GEO Score</option>
+              </select>
+
+              <!-- Export CSV Button -->
+              <button id="export-btn" class="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-medium bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[var(--border-medium)] text-[var(--text-primary)] transition-all shadow-sm">
+                <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                <span>Export CSV</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- The Table -->
+          <div class="data-table-container">
+            <table class="data-table" id="audits-table">
+              <thead>
+                <tr>
+                  <th>Site Domain</th>
+                  <th>Client</th>
+                  <th>Status</th>
+                  <th>
+                    <div class="flex items-center gap-1.5">
+                      <span>AIO Score</span>
+                      <div class="tooltip-container">
+                        <i data-lucide="info" class="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 tooltip-trigger cursor-pointer"></i>
+                        <div class="tooltip-content">
+                          <strong>AI Optimization (AIO):</strong> Deterministic score based on site's HTML, Schema, and semantic parseability.
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="flex items-center gap-1.5">
+                      <span>GEO Visibility</span>
+                      <div class="tooltip-container">
+                        <i data-lucide="info" class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 tooltip-trigger cursor-pointer"></i>
+                        <div class="tooltip-content">
+                          <strong>Generative Engine Optimization (GEO):</strong> Real-time citation frequency probed via Gemini Search grounding.
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <th>Executed When</th>
+                  <th class="text-right w-28">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="audits-tbody">
+                <!-- 0: shourya-bajaj-akurdi-pune.com (Active Audit) -->
+                <tr class="group cursor-pointer hover:bg-blue-50/40 dark:hover:bg-blue-950/20" onclick="window.location.href='report.html?site=shourya-bajaj-akurdi-pune.com&id=bajaj-akurdi'">
+                  <td>
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-7 h-7 rounded-lg bg-blue-600/10 border border-blue-600/20 flex items-center justify-center text-blue-600 dark:text-blue-400 font-mono text-xs font-semibold">
+                        SH
+                      </div>
+                      <div>
+                        <span class="font-medium text-[var(--text-primary)] hover:text-blue-600 transition-colors">shourya-bajaj-akurdi-pune.com</span>
+                        <div class="text-[11px] text-[var(--text-muted)] font-mono">1 page crawled</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="text-xs text-[var(--text-muted)] font-mono">Bajaj Dealer</span>
+                  </td>
+                  <td>
+                    <span class="status-indicator status-complete">
+                      <span class="status-dot"></span>
+                      <span>Complete</span>
+                    </span>
+                  </td>
+                  <td><span class="score-badge score-mid"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>66.8</span></td>
+                  <td><span class="score-badge score-low"><span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>27.6</span></td>
+                  <td>
+                    <span class="text-xs font-mono text-[var(--text-secondary)]">2026-11-17 08:57</span>
+                  </td>
+                  <td class="text-right">
+                    <div class="flex items-center justify-end">
+                      <a href="report.html?site=shourya-bajaj-akurdi-pune.com&id=bajaj-akurdi" onclick="event.stopPropagation();" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white shadow-sm shadow-blue-600/25 transition-all hover:scale-105 active:scale-95" title="Review Full Report">
+                        <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+                        <span>Review</span>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- 1: suzuki.com.ph -->
+                <tr class="group cursor-pointer" onclick="window.location.href='report.html?site=suzuki.com.ph&id=1'">
+                  <td>
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-7 h-7 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 font-mono text-xs font-semibold">
+                        SU
+                      </div>
+                      <div>
+                        <span class="font-medium text-[var(--text-primary)] hover:text-blue-600 transition-colors">suzuki.com.ph</span>
+                        <div class="text-[11px] text-[var(--text-muted)] font-mono">10 pages crawled</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="text-xs text-[var(--text-muted)] font-mono">-</span>
+                  </td>
+                  <td>
+                    <span class="status-indicator status-complete">
+                      <span class="status-dot"></span>
+                      <span>Complete</span>
+                    </span>
+                  </td>
+                  <td><span class="score-badge score-low"><span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>12.5</span></td>
+                  <td><span class="score-badge score-na">n/a</span></td>
+                  <td>
+                    <span class="text-xs font-mono text-[var(--text-secondary)]">2026-10-23 09:23</span>
+                  </td>
+                  <td class="text-right">
+                    <div class="flex items-center justify-end">
+                      <a href="report.html?site=suzuki.com.ph&id=1" onclick="event.stopPropagation();" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-50 hover:bg-blue-100 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 border border-blue-200 dark:border-blue-500/20 transition-all shadow-2xs hover:shadow-xs active:scale-95" title="Review Full Report">
+                        <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+                        <span>Review</span>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- 2: suzuki.com.ph -->
+                <tr class="group" onclick="openAuditModal(2)">
+                  <td>
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-7 h-7 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 font-mono text-xs font-semibold">
+                        SU
+                      </div>
+                      <div>
+                        <span class="font-medium text-[var(--text-primary)] hover:text-blue-600 transition-colors">suzuki.com.ph</span>
+                        <div class="text-[11px] text-[var(--text-muted)] font-mono">25 pages crawled</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="text-xs text-[var(--text-muted)] font-mono">-</span>
+                  </td>
+                  <td>
+                    <span class="status-indicator status-complete">
+                      <span class="status-dot"></span>
+                      <span>Complete</span>
+                    </span>
+                  </td>
+                  <td><span class="score-badge score-mid"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>51.4</span></td>
+                  <td><span class="score-badge score-high"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>60.5</span></td>
+                  <td>
+                    <span class="text-xs font-mono text-[var(--text-secondary)]">2026-10-21 10:12</span>
+                  </td>
+                  <td class="text-right">
+                    <div class="flex items-center justify-end">
+                      <button onclick="event.stopPropagation(); openAuditModal(2)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-50 hover:bg-blue-100 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 border border-blue-200 dark:border-blue-500/20 transition-all shadow-2xs hover:shadow-xs active:scale-95" title="View Full Report">
+                        <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                        <span>Report</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- 3: suzuki.com.ph (Failed) -->
+                <tr class="group" onclick="openAuditModal(3)">
+                  <td>
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-7 h-7 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 font-mono text-xs font-semibold">
+                        SU
+                      </div>
+                      <div>
+                        <span class="font-medium text-[var(--text-primary)] hover:text-blue-600 transition-colors">suzuki.com.ph</span>
+                        <div class="text-[11px] text-[var(--text-muted)] font-mono">10 pages crawled</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="text-xs text-[var(--text-muted)] font-mono">-</span>
+                  </td>
+                  <td>
+                    <span class="status-indicator status-failed">
+                      <span class="status-dot"></span>
+                      <span>Failed</span>
+                    </span>
+                  </td>
+                  <td><span class="score-badge score-mid"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>51.4</span></td>
+                  <td><span class="score-badge score-na">n/a</span></td>
+                  <td>
+                    <span class="text-xs font-mono text-[var(--text-secondary)]">2026-10-21 09:50</span>
+                  </td>
+                  <td class="text-right">
+                    <div class="flex items-center justify-end">
+                      <button onclick="event.stopPropagation(); openAuditModal(3)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-50 hover:bg-blue-100 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 border border-blue-200 dark:border-blue-500/20 transition-all shadow-2xs hover:shadow-xs active:scale-95" title="View Full Report">
+                        <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                        <span>Report</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- 4: suzuki-digital.com -->
+                <tr class="group" onclick="openAuditModal(4)">
+                  <td>
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-7 h-7 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 font-mono text-xs font-semibold">
+                        SU
+                      </div>
+                      <div>
+                        <span class="font-medium text-[var(--text-primary)] hover:text-blue-600 transition-colors">suzuki-digital.com</span>
+                        <div class="text-[11px] text-[var(--text-muted)] font-mono">10 pages crawled</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="text-xs text-[var(--text-muted)] font-mono">-</span>
+                  </td>
+                  <td>
+                    <span class="status-indicator status-complete">
+                      <span class="status-dot"></span>
+                      <span>Complete</span>
+                    </span>
+                  </td>
+                  <td><span class="score-badge score-mid"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>58.3</span></td>
+                  <td><span class="score-badge score-na">n/a</span></td>
+                  <td>
+                    <span class="text-xs font-mono text-[var(--text-secondary)]">2026-10-16 08:10</span>
+                  </td>
+                  <td class="text-right">
+                    <div class="flex items-center justify-end">
+                      <button onclick="event.stopPropagation(); openAuditModal(4)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-50 hover:bg-blue-100 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 border border-blue-200 dark:border-blue-500/20 transition-all shadow-2xs hover:shadow-xs active:scale-95" title="View Full Report">
+                        <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                        <span>Report</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- 5: example.com -->
+                <tr class="group" onclick="openAuditModal(5)">
+                  <td>
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-7 h-7 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 font-mono text-xs font-semibold">
+                        EX
+                      </div>
+                      <div>
+                        <span class="font-medium text-[var(--text-primary)] hover:text-blue-600 transition-colors">example.com</span>
+                        <div class="text-[11px] text-[var(--text-muted)] font-mono">10 pages crawled</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="text-xs text-[var(--text-muted)] font-mono">-</span>
+                  </td>
+                  <td>
+                    <span class="status-indicator status-complete">
+                      <span class="status-dot"></span>
+                      <span>Complete</span>
+                    </span>
+                  </td>
+                  <td><span class="score-badge score-low"><span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>33.5</span></td>
+                  <td><span class="score-badge score-na">n/a</span></td>
+                  <td>
+                    <span class="text-xs font-mono text-[var(--text-secondary)]">2026-10-14 10:14</span>
+                  </td>
+                  <td class="text-right">
+                    <div class="flex items-center justify-end">
+                      <button onclick="event.stopPropagation(); openAuditModal(5)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-50 hover:bg-blue-100 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 border border-blue-200 dark:border-blue-500/20 transition-all shadow-2xs hover:shadow-xs active:scale-95" title="View Full Report">
+                        <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                        <span>Report</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- 6: suzuki-digital.com -->
+                <tr class="group" onclick="openAuditModal(6)">
+                  <td>
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-7 h-7 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 font-mono text-xs font-semibold">
+                        SU
+                      </div>
+                      <div>
+                        <span class="font-medium text-[var(--text-primary)] hover:text-blue-600 transition-colors">suzuki-digital.com</span>
+                        <div class="text-[11px] text-[var(--text-muted)] font-mono">10 pages crawled</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="text-xs text-[var(--text-muted)] font-mono">-</span>
+                  </td>
+                  <td>
+                    <span class="status-indicator status-complete">
+                      <span class="status-dot"></span>
+                      <span>Complete</span>
+                    </span>
+                  </td>
+                  <td><span class="score-badge score-mid"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>58.3</span></td>
+                  <td><span class="score-badge score-na">n/a</span></td>
+                  <td>
+                    <span class="text-xs font-mono text-[var(--text-secondary)]">2026-10-14 10:01</span>
+                  </td>
+                  <td class="text-right">
+                    <div class="flex items-center justify-end">
+                      <button onclick="event.stopPropagation(); openAuditModal(6)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-50 hover:bg-blue-100 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 border border-blue-200 dark:border-blue-500/20 transition-all shadow-2xs hover:shadow-xs active:scale-95" title="View Full Report">
+                        <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                        <span>Report</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- 7: glocal360.ai -->
+                <tr class="group" onclick="openAuditModal(7)">
+                  <td>
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-7 h-7 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 font-mono text-xs font-semibold">
+                        GL
+                      </div>
+                      <div>
+                        <span class="font-medium text-[var(--text-primary)] hover:text-blue-600 transition-colors">glocal360.ai</span>
+                        <div class="text-[11px] text-[var(--text-muted)] font-mono">10 pages crawled</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="text-xs text-[var(--text-muted)] font-mono">-</span>
+                  </td>
+                  <td>
+                    <span class="status-indicator status-complete">
+                      <span class="status-dot"></span>
+                      <span>Complete</span>
+                    </span>
+                  </td>
+                  <td><span class="score-badge score-mid"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>55.1</span></td>
+                  <td><span class="score-badge score-low"><span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>26.0</span></td>
+                  <td>
+                    <span class="text-xs font-mono text-[var(--text-secondary)]">2026-10-14 10:00</span>
+                  </td>
+                  <td class="text-right">
+                    <div class="flex items-center justify-end">
+                      <button onclick="event.stopPropagation(); openAuditModal(7)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-50 hover:bg-blue-100 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 border border-blue-200 dark:border-blue-500/20 transition-all shadow-2xs hover:shadow-xs active:scale-95" title="View Full Report">
+                        <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                        <span>Report</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- 8: example.com -->
+                <tr class="group" onclick="openAuditModal(8)">
+                  <td>
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-7 h-7 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 font-mono text-xs font-semibold">
+                        EX
+                      </div>
+                      <div>
+                        <span class="font-medium text-[var(--text-primary)] hover:text-blue-600 transition-colors">example.com</span>
+                        <div class="text-[11px] text-[var(--text-muted)] font-mono">10 pages crawled</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="text-xs text-[var(--text-muted)] font-mono">-</span>
+                  </td>
+                  <td>
+                    <span class="status-indicator status-complete">
+                      <span class="status-dot"></span>
+                      <span>Complete</span>
+                    </span>
+                  </td>
+                  <td><span class="score-badge score-low"><span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>33.5</span></td>
+                  <td><span class="score-badge score-na">n/a</span></td>
+                  <td>
+                    <span class="text-xs font-mono text-[var(--text-secondary)]">2026-10-14 09:58</span>
+                  </td>
+                  <td class="text-right">
+                    <div class="flex items-center justify-end">
+                      <button onclick="event.stopPropagation(); openAuditModal(8)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-50 hover:bg-blue-100 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 border border-blue-200 dark:border-blue-500/20 transition-all shadow-2xs hover:shadow-xs active:scale-95" title="View Full Report">
+                        <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                        <span>Report</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- 9: adglobal360.com -->
+                <tr class="group" onclick="openAuditModal(9)">
+                  <td>
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-7 h-7 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 font-mono text-xs font-semibold">
+                        AD
+                      </div>
+                      <div>
+                        <span class="font-medium text-[var(--text-primary)] hover:text-blue-600 transition-colors">adglobal360.com</span>
+                        <div class="text-[11px] text-[var(--text-muted)] font-mono">10 pages crawled</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="text-xs text-[var(--text-muted)] font-mono">-</span>
+                  </td>
+                  <td>
+                    <span class="status-indicator status-complete">
+                      <span class="status-dot"></span>
+                      <span>Complete</span>
+                    </span>
+                  </td>
+                  <td><span class="score-badge score-high"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>60.0</span></td>
+                  <td><span class="score-badge score-na">n/a</span></td>
+                  <td>
+                    <span class="text-xs font-mono text-[var(--text-secondary)]">2026-10-14 09:56</span>
+                  </td>
+                  <td class="text-right">
+                    <div class="flex items-center justify-end">
+                      <button onclick="event.stopPropagation(); openAuditModal(9)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-50 hover:bg-blue-100 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 border border-blue-200 dark:border-blue-500/20 transition-all shadow-2xs hover:shadow-xs active:scale-95" title="View Full Report">
+                        <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                        <span>Report</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- 10: example.com -->
+                <tr class="group" onclick="openAuditModal(10)">
+                  <td>
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-7 h-7 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 font-mono text-xs font-semibold">
+                        EX
+                      </div>
+                      <div>
+                        <span class="font-medium text-[var(--text-primary)] hover:text-blue-600 transition-colors">example.com</span>
+                        <div class="text-[11px] text-[var(--text-muted)] font-mono">10 pages crawled</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="text-xs text-[var(--text-muted)] font-mono">-</span>
+                  </td>
+                  <td>
+                    <span class="status-indicator status-complete">
+                      <span class="status-dot"></span>
+                      <span>Complete</span>
+                    </span>
+                  </td>
+                  <td><span class="score-badge score-low"><span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>33.5</span></td>
+                  <td><span class="score-badge score-na">n/a</span></td>
+                  <td>
+                    <span class="text-xs font-mono text-[var(--text-secondary)]">2026-10-13 11:13</span>
+                  </td>
+                  <td class="text-right">
+                    <div class="flex items-center justify-end">
+                      <button onclick="event.stopPropagation(); openAuditModal(10)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-50 hover:bg-blue-100 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20 border border-blue-200 dark:border-blue-500/20 transition-all shadow-2xs hover:shadow-xs active:scale-95" title="View Full Report">
+                        <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                        <span>Report</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Table Footer Pagination -->
+          <div class="flex items-center justify-between pt-3 text-xs text-[var(--text-muted)] border-t border-[var(--border-subtle)]">
+            <span id="pagination-info">Showing 10 of 10 audits</span>
+            <div class="flex items-center gap-2">
+              <button class="px-2.5 py-1 rounded border border-[var(--border-subtle)] hover:border-[var(--border-medium)] text-[var(--text-secondary)] disabled:opacity-40" disabled>
+                Previous
+              </button>
+              <button class="px-2.5 py-1 rounded border border-[var(--border-subtle)] hover:border-[var(--border-medium)] text-[var(--text-secondary)] disabled:opacity-40" disabled>
+                Next
+              </button>
+            </div>
+          </div>
+
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- =========================================================================
+       AUDIT DETAIL MODAL (Deep Dive View)
+       ========================================================================= -->
+  <div class="modal-backdrop" id="audit-modal">
+    <div class="modal-content p-6 space-y-6">
+      <div class="flex items-center justify-between border-b border-[var(--border-subtle)] pb-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold">
+            <i data-lucide="file-text" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-[var(--text-primary)]" id="modal-site-title">suzuki.com.ph</h3>
+            <p class="text-xs text-[var(--text-secondary)]" id="modal-audit-date">Audited on 2026-10-23 09:23</p>
+          </div>
+        </div>
+        <button id="close-modal-btn" class="p-1.5 rounded-lg text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body Scores Breakdown -->
+      <div class="grid grid-cols-2 gap-4">
+        <div class="p-4 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-subtle)] space-y-2">
+          <div class="text-xs font-semibold text-[var(--text-secondary)] uppercase">AIO Score (Deterministic)</div>
+          <div class="text-3xl font-extrabold font-mono text-[var(--text-primary)]" id="modal-aio-score">12.5</div>
+          <p class="text-[11px] text-[var(--text-muted)]">Evaluated HTML tags, JSON-LD schemas, and heading structures.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-subtle)] space-y-2">
+          <div class="text-xs font-semibold text-[var(--text-secondary)] uppercase">GEO Visibility (Gemini Probes)</div>
+          <div class="text-3xl font-extrabold font-mono text-[var(--text-primary)]" id="modal-geo-score">N/A</div>
+          <p class="text-[11px] text-[var(--text-muted)]">Gemini search grounding probe citation index.</p>
+        </div>
+      </div>
+
+      <!-- Weighted Roadmap / Actionable Items -->
+      <div class="space-y-3">
+        <h4 class="text-sm font-bold text-[var(--text-primary)]">Weighted Optimization Roadmap</h4>
+        <div class="space-y-2" id="modal-roadmap">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <div class="flex justify-end gap-3 pt-3 border-t border-[var(--border-subtle)]">
+        <button id="modal-close-action" class="px-4 py-2 rounded-xl text-xs font-semibold bg-[var(--bg-surface)] border border-[var(--border-subtle)] text-[var(--text-primary)] hover:border-[var(--border-medium)]">
+          Close
+        </button>
+        <button class="px-4 py-2 rounded-xl text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-600/25">
+          Download PDF Roadmap
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Logic -->
+  <script src="app.js?v=5"></script>
+</body>
+</html>
